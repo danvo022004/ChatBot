@@ -37,11 +37,17 @@ dependencies {
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
+    implementation(libs.room.runtime.android)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
     implementation ("com.airbnb.android:lottie:6.4.0") // Phiên bản mới nhất 2025
-    implementation ("com.airbnb.android:lottie:$6.6.6")
     implementation ("com.google.android.material:material:1.12.0")
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
+
+    //room
+    implementation ("androidx.room:room-runtime:2.6.1")
+    // (Tùy chọn) Nếu dùng LiveData
+    implementation ("androidx.lifecycle:lifecycle-livedata:2.8.0")
+
 }

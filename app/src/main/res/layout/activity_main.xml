@@ -7,12 +7,24 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
     <RelativeLayout
         android:id="@+id/below"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:background="@drawable/gradcolor">
+
+        <ImageButton
+            android:id="@+id/menu_btn"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/end"
+            android:contentDescription="Menu lịch sử chat"
+            android:src="@drawable/ic_menu"/>
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
@@ -80,8 +92,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="100dp"
         android:layout_marginEnd="0dp"
-        android:layout_marginBottom="-2dp"
-        android:padding="10dp" />
+        android:layout_marginBottom="-2dp" />
 
     <TextView
         android:id="@+id/welcome_text"
@@ -107,7 +118,9 @@
             android:layout_toLeftOf="@id/send_btn"
             android:background="@drawable/rounded_corner"
             android:hint="Write here "
-            android:padding="16dp" />
+            android:padding="16dp"
+            android:imeOptions="actionSend"
+            android:singleLine="true"/>
 
         <ImageButton
             android:id="@+id/send_btn"
