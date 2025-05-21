@@ -1,4 +1,4 @@
-package com.example.chatbot;
+package com.example.chatbot.activity;
 
 import android.app.Dialog;
 import android.os.Bundle;
@@ -17,11 +17,11 @@ import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.airbnb.lottie.LottieAnimationView;
+import com.example.chatbot.R;
 import com.example.chatbot.adapter.MessageAdapter;
 import com.example.chatbot.database.AppDatabase;
 import com.example.chatbot.model.Message;
