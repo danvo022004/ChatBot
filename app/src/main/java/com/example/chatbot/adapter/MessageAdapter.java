@@ -30,6 +30,12 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         this.messageList = messageList;
     }
 
+    public void setMessages(List<Message> messages) {
+        messageList.clear();
+        messageList.addAll(messages);
+        notifyDataSetChanged();
+    }
+
     @Override
     public int getItemViewType(int position) {
         Message message = messageList.get(position);

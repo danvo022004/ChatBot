@@ -7,11 +7,14 @@ import androidx.room.RoomDatabase;
 import androidx.room.Database;
 
 import com.example.chatbot.dao.MessageDao;
+import com.example.chatbot.dao.SessionDao;
 import com.example.chatbot.model.MessageEntity;
+import com.example.chatbot.model.Session;
 
-@Database(entities = {MessageEntity.class}, version = 1, exportSchema = false)
+@Database(entities = {MessageEntity.class, Session.class}, version = 2, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase{
     public abstract MessageDao messageDao();
+    public abstract SessionDao sessionDao();
 
     private static volatile AppDatabase INSTANCE;
 
@@ -20,7 +23,8 @@ public abstract class AppDatabase extends RoomDatabase{
             synchronized (AppDatabase.class) {
                 if (INSTANCE == null) {
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
-                            AppDatabase.class, "message_database")
+                            AppDatabase.class, "chat_database")
+                            .fallbackToDestructiveMigration() // Xóa dữ liệu cũ và tạo lại bảng
                             .build();
                 }
             }

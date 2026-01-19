@@ -14,9 +14,6 @@ public interface MessageDao {
     @Insert
     void insert(MessageEntity message);
 
-    @Query("SELECT * FROM messages ORDER BY timestamp ASC")
-    LiveData<List<MessageEntity>> getAllMessages();
-
-    @Query("DELETE FROM messages")
-    void deleteAll();
+    @Query("SELECT * FROM messages WHERE sessionId = :sessionId ORDER BY timestamp ASC")
+    LiveData<List<MessageEntity>> getMessagesBySession(long sessionId);
 }

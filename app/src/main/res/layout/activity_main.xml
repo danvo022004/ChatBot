@@ -131,7 +131,7 @@
             android:layout_marginStart="10dp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:padding="8dp"
-            android:src="@mipmap/send" />
+            android:src="@drawable/send" />
     </RelativeLayout>
 
 </RelativeLayout>
